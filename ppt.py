@@ -55,14 +55,50 @@ def generar_turno(nombre_usuario):
 
 	if turno == 1:
 		print(f'Te toca a ti {nombre_usuario}')
+		return turno
 	else:
 		print(f'Me toca a mi {nombre_usuario}')
-
+		return turno
 	
+
+def juego(turno):
+	jugadas = ['S', 'T', 'P']
+	jugada_computadora = random.choices(jugadas) 
+	jugada_computadora_imagen = ''
+	jugada_usuario_imagen = ''
+	jugada_usuario = ''
+	if turno == 1:
+		jugada_usuario = input('Introduce tu jugada: (S) para tijeras, (P) para papel o (S) para piedra: ').upper()
+		if jugada_usuario == 'S':
+			jugada_usuario_imagen = piedra()
+			return jugada_usuario
+		elif jugada_usuario == 'T':
+			jugada_usuario_imagen = tijera()
+			return jugada_usuario
+		elif jugada_usuario == 'P':
+			jugada_usuario_imagen = papel()
+			return jugada_usuario
+		else: 
+			print('La opcion que ingresaste no existe')
+
+	else:
+		if jugada_computadora == 'S':
+			jugada = piedra()
+		elif jugada_computadora == 'T':
+			jugada = tijera()
+		else:
+			jugada = papel()
+	return jugada_computadora
+
 def main():
 	bienvenida()
 	nombre_usuario = input('Introduce tu nombre: ').upper()
-	generar_turno(nombre_usuario)
+	turno_jugador = generar_turno(nombre_usuario)
+
+	jugada = juego(turno_jugador)
+
+	i
+
 
 
 if __name__ == '__main__':
