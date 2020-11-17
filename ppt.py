@@ -59,45 +59,41 @@ def generar_turno(nombre_usuario):
 	else:
 		print(f'Me toca a mi {nombre_usuario}')
 		return turno
-	
 
-def juego(turno):
-	jugadas = ['S', 'T', 'P']
-	jugada_computadora = random.choices(jugadas) 
-	jugada_computadora_imagen = ''
-	jugada_usuario_imagen = ''
-	jugada_usuario = ''
-	if turno == 1:
-		jugada_usuario = input('Introduce tu jugada: (S) para tijeras, (P) para papel o (S) para piedra: ').upper()
-		if jugada_usuario == 'S':
-			jugada_usuario_imagen = piedra()
-			return jugada_usuario
-		elif jugada_usuario == 'T':
-			jugada_usuario_imagen = tijera()
-			return jugada_usuario
-		elif jugada_usuario == 'P':
-			jugada_usuario_imagen = papel()
-			return jugada_usuario
-		else: 
-			print('La opcion que ingresaste no existe')
 
+def jugada_computadora():
+	jugadas = ['S','P','T']
+	jugada_computadora = random.choice(jugadas)
+
+	if jugada_computadora == 'S':
+		print('Elijo piedra!')
+		jugada_computadora = piedra()
+		print(jugada_computadora)
+	elif jugada_computadora == 'P':
+		print('Elijo papel!')
+		jugada_computadora = papel()
+		print(jugada_computadora)
 	else:
-		if jugada_computadora == 'S':
-			jugada = piedra()
-		elif jugada_computadora == 'T':
-			jugada = tijera()
-		else:
-			jugada = papel()
-	return jugada_computadora
+		print('Eligo tiejeras!')
+		jugada_computadora = tijera()
+		print(jugada_computadora)
+
+
+def jugada_usuario():
+	jugada_usuario = input('Ingresa tu jugada (S) para pieda, (T) para tijera o (P) para papel: ').upper()
+
+	return jugada_usuario
+
 
 def main():
 	bienvenida()
 	nombre_usuario = input('Introduce tu nombre: ').upper()
 	turno_jugador = generar_turno(nombre_usuario)
 
-	jugada = juego(turno_jugador)
-
-	i
+	if turno_jugador == 1:
+		jugada_usuario()
+	if turno_jugador == 2:
+		jugada_computadora()
 
 
 
