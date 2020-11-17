@@ -37,8 +37,15 @@ def tijera():
 def bienvenida():
 	mensaje = """
 	Bienvenido a piedra papel o tijeras, en este juego
-	jugaras contra mi humano. Preparate para jugar pero 
-	primero dime tu nombre: 
+	jugaras contra mi humano. 
+
+	Para poder jugar debes introducir las siguientes letras
+
+		- (S) Para elegir piedra
+		- (T) Para elegir tijeras
+		- (P) Para elegir papel
+
+	Preparate para jugar pero primero dime tu nombre: 
 	"""
 
 	print(mensaje)
@@ -47,7 +54,7 @@ def generar_turno(nombre_usuario):
 	turno = random.randint(1,2)
 
 	if turno == 1:
-		return turno
+		print(f'Te toca a ti {nombre_usuario}')
 	else:
 		print(f'Me toca a mi {nombre_usuario}')
 
@@ -55,7 +62,7 @@ def generar_turno(nombre_usuario):
 def main():
 	bienvenida()
 	nombre_usuario = input('Introduce tu nombre: ').upper()
-	generar_turno()
+	generar_turno(nombre_usuario)
 
 
 if __name__ == '__main__':
