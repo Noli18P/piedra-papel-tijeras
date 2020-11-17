@@ -85,7 +85,7 @@ def jugada_computadora():
 		return jc
 
 
-def jugada_usuario():
+def jugada_de_usuario():
 	jugada_usuario = input('Ingresa tu jugada (S) para pieda, (T) para tijera o (P) para papel: ').upper()
 	ju = 0
 	if jugada_usuario == 'S':
@@ -105,7 +105,7 @@ def jugada_usuario():
 		return ju
 	else:
 		print('La opcion ingresada no existe')
-		jugada_usuario()
+		jugada_de_usuario()
 
 def main():
 	bienvenida()
@@ -113,7 +113,7 @@ def main():
 	turno_jugador = generar_turno(nombre_usuario)
 
 	if turno_jugador == 1:
-		ju = jugada_usuario()
+		ju = jugada_de_usuario()
 	if turno_jugador == 2:
 		jc = jugada_computadora()
 
