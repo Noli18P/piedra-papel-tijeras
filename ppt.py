@@ -35,7 +35,9 @@ def tijera():
 
 def main():
 	imagen_tijera = tijera()
-
+	imagen_papel = papel()
+	
+	print(imagen_papel)
 	print(imagen_tijera)
 
 
