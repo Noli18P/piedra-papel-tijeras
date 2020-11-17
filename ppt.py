@@ -1,3 +1,5 @@
+import random
+
 """
 Piedra gana a tijera
 Tijera gana a papel
@@ -41,10 +43,19 @@ def bienvenida():
 
 	print(mensaje)
 
+def generar_turno(nombre_usuario):
+	turno = random.randint(1,2)
 
+	if turno == 1:
+		return turno
+	else:
+		print(f'Me toca a mi {nombre_usuario}')
+
+	
 def main():
 	bienvenida()
 	nombre_usuario = input('Introduce tu nombre: ').upper()
+	generar_turno()
 
 
 if __name__ == '__main__':
