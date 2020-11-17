@@ -43,7 +43,8 @@ def bienvenida():
 
 
 def main():
-	pass
+	bienvenida()
+	nombre_usuario = input('Introduce tu nombre: ').upper()
 
 
 if __name__ == '__main__':
