@@ -64,33 +64,45 @@ def generar_turno(nombre_usuario):
 def jugada_computadora():
 	jugadas = ['S','P','T']
 	jugada_computadora = random.choice(jugadas)
-
+	jc = 0
 	if jugada_computadora == 'S':
 		print('Elijo piedra!')
 		jugada_computadora = piedra()
 		print(jugada_computadora)
+		jc = 1
+		return jc
 	elif jugada_computadora == 'P':
 		print('Elijo papel!')
 		jugada_computadora = papel()
 		print(jugada_computadora)
+		jc = 3
+		return jc
 	else:
 		print('Eligo tiejeras!')
 		jugada_computadora = tijera()
 		print(jugada_computadora)
+		jc = 2
+		return jc
 
 
 def jugada_usuario():
 	jugada_usuario = input('Ingresa tu jugada (S) para pieda, (T) para tijera o (P) para papel: ').upper()
-
+	ju = 0
 	if jugada_usuario == 'S':
 		jugada_usuario = piedra()
 		print(jugada_usuario)
+		ju = 1
+		return ju
 	elif jugada_usuario == 'T':
 		jugada_usuario = tijera()
 		print(jugada_usuario)
+		ju = 2
+		return ju
 	elif jugada_usuario == 'P':
 		jugada_usuario = papel()
 		print(jugada_usuario)
+		ju = 3
+		return ju
 	else:
 		print('La opcion ingresada no existe')
 		jugada_usuario()
@@ -101,9 +113,9 @@ def main():
 	turno_jugador = generar_turno(nombre_usuario)
 
 	if turno_jugador == 1:
-		jugada_usuario()
+		ju = jugada_usuario()
 	if turno_jugador == 2:
-		jugada_computadora()
+		jc = jugada_computadora()
 
 
 
