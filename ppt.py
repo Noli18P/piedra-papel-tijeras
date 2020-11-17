@@ -17,7 +17,7 @@ def papel():
 def piedra():
 	imagen_piedra = """
 	    ____
-	   /    \
+	   /    \ 
 	   \____/
 	"""
 	return imagen_piedra
@@ -36,7 +36,9 @@ def tijera():
 def main():
 	imagen_tijera = tijera()
 	imagen_papel = papel()
-	
+	imagen_piedra = piedra()
+
+	print(imagen_piedra)
 	print(imagen_papel)
 	print(imagen_tijera)
 
