@@ -32,15 +32,18 @@ def tijera():
 	"""
 	return imagen_tijera
 
+def bienvenida():
+	mensaje = """
+	Bienvenido a piedra papel o tijeras, en este juego
+	jugaras contra mi humano. Preparate para jugar pero 
+	primero dime tu nombre: 
+	"""
+
+	print(mensaje)
+
 
 def main():
-	imagen_tijera = tijera()
-	imagen_papel = papel()
-	imagen_piedra = piedra()
-
-	print(imagen_piedra)
-	print(imagen_papel)
-	print(imagen_tijera)
+	pass
 
 
 if __name__ == '__main__':
