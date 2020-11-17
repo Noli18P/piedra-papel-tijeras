@@ -82,8 +82,15 @@ def jugada_computadora():
 def jugada_usuario():
 	jugada_usuario = input('Ingresa tu jugada (S) para pieda, (T) para tijera o (P) para papel: ').upper()
 
-	return jugada_usuario
-
+	if jugada_usuario == 'S':
+		jugada_usuario = piedra()
+		print(jugada_usuario)
+	elif jugada_usuario == 'T':
+		jugada_usuario = tijera()
+		print(jugada_usuario)
+	elif jugada_usuario == 'P':
+		Jugada_usuario = papel()
+		print(jugada_usuario)
 
 def main():
 	bienvenida()
