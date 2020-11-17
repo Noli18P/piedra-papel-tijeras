@@ -1,8 +1,8 @@
 import random
 
 """
-Piedra gana a tijera
-Tijera gana a papel
+Piedra = 1 gana a tijera = 2
+Tijera gana a papel = 3
 Papel gana a piedra
 """
 def papel():
@@ -107,16 +107,41 @@ def jugada_de_usuario():
 		print('La opcion ingresada no existe')
 		jugada_de_usuario()
 
-def main():
+
+def comenzar_juego():
 	bienvenida()
 	nombre_usuario = input('Introduce tu nombre: ').upper()
 	turno_jugador = generar_turno(nombre_usuario)
+	ju = 0
+	jc = 0 
 
 	if turno_jugador == 1:
 		ju = jugada_de_usuario()
-	if turno_jugador == 2:
 		jc = jugada_computadora()
 
+	if turno_jugador == 2:
+		jc = jugada_computadora()
+		ju = jugada_de_usuario()
+
+	return ju,jc,nombre_usuario 
+
+
+def deternimar_ganador(jugada, jugada_pc,nombre):
+	if jugada == jugada_pc:
+		print('! E M P A T E !')
+	elif jugada == 1 and jugada_pc == 2:
+		print(f'! {nombre} G A N A!')
+	elif jugada == 2 and jugada_pc == 3:
+		print(f'! {nombre} G A N A!')
+	elif jugada == 3 and jugada_pc == 1:
+		print(f'! {nombre} G A N A!')
+	else:
+		print('G A N A - C O M P U T A D O R')	
+
+
+def main():
+	ju,jc,nombre = comenzar_juego()
+	deternimar_ganador(ju,jc,nombre)
 
 
 if __name__ == '__main__':
