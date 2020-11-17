@@ -89,8 +89,11 @@ def jugada_usuario():
 		jugada_usuario = tijera()
 		print(jugada_usuario)
 	elif jugada_usuario == 'P':
-		Jugada_usuario = papel()
+		jugada_usuario = papel()
 		print(jugada_usuario)
+	else:
+		print('La opcion ingresada no existe')
+		jugada_usuario()
 
 def main():
 	bienvenida()
